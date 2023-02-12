@@ -12,8 +12,9 @@ export default function Books() {
 
     axios(configuration)
       .then((result) => {
+        console.log(result);
         // assign the message in our result to the message we initialized above
-        setBooks(result);
+        setBooks(result.data);
       })
       .catch((error) => {
         error = new Error();
@@ -23,9 +24,21 @@ export default function Books() {
     <div className='container'>
       <h1> Example of React Map Loop </h1>
 
-      {books.map((book) => (
-        <li>{book.title}</li>
-      ))}
+      <table className='table table-bordered'>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Author</th>
+        </tr>
+
+        {books.map((book, index) => (
+          <tr data-index={index}>
+            <td>{book.id}</td>
+            <td>{book.title}</td>
+            <td>{book.author}</td>
+          </tr>
+        ))}
+      </table>
     </div>
   );
 }
