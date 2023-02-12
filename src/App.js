@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container, Col, Row } from "react-bootstrap";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import Account from "./components/Account";
+import ProtectedRoutes from "./components/ProtectedRoutes";
+import FreeComponent from "./components/FreeComponent";
+import AuthComponent from "./components/AuthComponent";
+
+import { Switch, Route } from "react-router-dom";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Row>
+        <Col className='text-center'>
+          <h1>React Authentication Tutorial</h1>
+
+          <section id='navigation'>
+            <a href='/'>Home</a>
+            <a href='/free'>Free Component</a>
+            <a href='/auth'>Auth Component</a>
+          </section>
+        </Col>
+      </Row>
+
+      {/* create routes here */}
+      <Switch>
+        <Route exact path='/' component={Account} />
+        <Route exact path='/free' component={FreeComponent} />
+        <ProtectedRoutes exact path='/auth' component={AuthComponent} />
+      </Switch>
+    </Container>
   );
 }
 
