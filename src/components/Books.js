@@ -34,7 +34,11 @@ export default function Books() {
 
       {books.map((book, index) => (
         <div className='card'>
-          <img src={book.imageUrl} alt={book.title} className='card-img' />
+          <img
+            src='https://images.epagine.fr/930/9782075145930_1_75.jpg'
+            alt={book.title}
+            className='card-img'
+          />
           <div className='card-content'>
             <h2 className='card-title'>{book.title}</h2>
             <p className='card-text'>{book.description}</p>
