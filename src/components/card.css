@@ -1,5 +1,6 @@
 .card {
-  width: 300px;
+  width: 200px;
+  height: 300px;
   border: 1px solid #ccc;
   border-radius: 5px;
   overflow: hidden;
@@ -10,6 +11,8 @@
   display: block;
   width: 100%;
   height: auto;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card-content {
