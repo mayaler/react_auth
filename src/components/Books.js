@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "./card.css";
 
 export default function Books() {
   const [books, setBooks] = useState([]);
