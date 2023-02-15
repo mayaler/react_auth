@@ -22,7 +22,7 @@ export default function Books() {
       });
   }, []);
   return (
-    <div className='.card-grid'>
+    <div className='card-grid'>
       {/* <table className='table table-bordered'>
         <thead>
           <tr>
