@@ -6,7 +6,7 @@ export default function BookRegister() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [url, setUrl] = useState();
-  const [description, setDescription] = useState();
+  const [summary, setSummary] = useState();
   const [register, setRegister] = useState(false);
 
   const handleSubmit = (e) => {
@@ -20,7 +20,7 @@ export default function BookRegister() {
         title,
         author,
         url,
-        description,
+        summary,
       },
     };
 
@@ -79,9 +79,9 @@ export default function BookRegister() {
           <Form.Label>Description</Form.Label>
           <Form.Control
             type='text'
-            name='description'
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            name='summary'
+            value={summary}
+            onChange={(e) => setSummary(e.target.value)}
             placeholder='Book description'
           />
         </Form.Group>
