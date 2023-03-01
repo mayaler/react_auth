@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import { Button } from "react-bootstrap";
+import BookRegister from "./BookRegister";
 const cookies = new Cookies();
 
 // get token generated on login
@@ -45,6 +46,7 @@ export default function AuthComponent() {
       <h1>Auth Component</h1>
       {/* displaying our message from our API call */}
       <h3 className=' text-danger'>{message}</h3>
+      <BookRegister />
       {/* logout */}
       <Button type='submit' variant='danger' onClick={() => logout()}>
         Logout
