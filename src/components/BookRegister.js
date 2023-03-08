@@ -4,10 +4,12 @@ import axios from "axios";
 
 export default function BookRegister() {
   const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [url, setUrl] = useState();
-  const [summary, setSummary] = useState();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [url, setUrl] = useState("");
+  const [summary, setSummary] = useState("");
   const [register, setRegister] = useState(false);
+  const [isbn, setIsbn] = useState("");
 
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
@@ -18,9 +20,11 @@ export default function BookRegister() {
       url: "https://nodejs-mongodb-react-auth-app.herokuapp.com/bookregister",
       data: {
         title,
-        author,
+        firstName,
+        lastName,
         url,
         summary,
+        isbn,
       },
     };
 
@@ -51,14 +55,25 @@ export default function BookRegister() {
         </Form.Group>
 
         {/* Author */}
-        <Form.Group controlId='formBookAuthor'>
-          <Form.Label>Author</Form.Label>
+        <Form.Group controlId='formBookAuthorFname'>
+          <Form.Label>Author First name</Form.Label>
           <Form.Control
             type='text'
-            name='author'
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-            placeholder='Author'
+            name='first_name'
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            placeholder='Author first name'
+          />
+        </Form.Group>
+
+        <Form.Group controlId='formBookAuthorLname'>
+          <Form.Label>Author Last name</Form.Label>
+          <Form.Control
+            type='text'
+            name='last_name'
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            placeholder='Author last name'
           />
         </Form.Group>
 
@@ -71,6 +86,18 @@ export default function BookRegister() {
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder='Image Url'
+          />
+        </Form.Group>
+
+        {/* ISBN */}
+        <Form.Group controlId='formBookIsbn'>
+          <Form.Label>isbn</Form.Label>
+          <Form.Control
+            type='text'
+            name='isbn'
+            value={isbn}
+            onChange={(e) => setIsbn(e.target.value)}
+            placeholder='isbn'
           />
         </Form.Group>
 
@@ -100,7 +127,7 @@ export default function BookRegister() {
             The book had been Registered Successfully
           </p>
         ) : (
-          <p className='text-danger'>You Are Not Registered</p>
+          <p className='text-danger'>The book was not yet Registered</p>
         )}
       </Form>
     </>
