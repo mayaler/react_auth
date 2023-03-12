@@ -14,7 +14,7 @@ export default function Register() {
     // set configurations
     const configuration = {
       method: "post",
-      url: "https://nodejs-mongodb-react-auth-app.herokuapp.com/register",
+      url: "https://auth-backend-one.vercel.app/register",
       data: {
         email,
         password,

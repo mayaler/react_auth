@@ -5,7 +5,6 @@ import Account from "./components/Account";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import FreeComponent from "./components/FreeComponent";
 import AuthComponent from "./components/AuthComponent";
-
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 

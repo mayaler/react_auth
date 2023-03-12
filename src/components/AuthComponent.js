@@ -6,7 +6,6 @@ const cookies = new Cookies();
 
 // get token generated on login
 const token = cookies.get("TOKEN");
-
 export default function AuthComponent() {
   // set an initial state for the message we will receive after the API call
   const [message, setMessage] = useState("");
@@ -15,7 +14,7 @@ export default function AuthComponent() {
     // set configurations for the API call here
     const configuration = {
       method: "get",
-      url: "https://nodejs-mongodb-react-auth-app.herokuapp.com/auth-endpoint",
+      url: "https://auth-backend-one.vercel.app/auth-endpoint",
       headers: {
         Authorization: `Bearer ${token}`,
       },

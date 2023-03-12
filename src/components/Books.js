@@ -7,7 +7,7 @@ export default function Books() {
   useEffect(() => {
     const configuration = {
       method: "get",
-      url: "https://nodejs-mongodb-react-auth-app.herokuapp.com/find",
+      url: "https://auth-backend-one.vercel.app/find",
     };
 
     axios(configuration)
