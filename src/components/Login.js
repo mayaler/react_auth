@@ -16,7 +16,7 @@ export default function Login() {
     // set configurations
     const configuration = {
       method: "post",
-      url: "https://nodejs-mongodb-react-auth-app.herokuapp.com/login",
+      url: "https://auth-backend-one.vercel.app/login",
       data: {
         email,
         password,

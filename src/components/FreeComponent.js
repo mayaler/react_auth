@@ -11,7 +11,7 @@ export default function FreeComponent() {
     // set configurations for the API call here
     const configuration = {
       method: "get",
-      url: "https://nodejs-mongodb-react-auth-app.herokuapp.com/free-endpoint",
+      url: "https://auth-backend-one.vercel.app/free-endpoint",
     };
 
     // make the API call

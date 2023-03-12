@@ -17,7 +17,7 @@ export default function BookRegister() {
     // set configurations
     const configuration = {
       method: "post",
-      url: "https://nodejs-mongodb-react-auth-app.herokuapp.com/bookregister",
+      url: "https://auth-backend-one.vercel.app/bookregister",
       data: {
         title,
         firstName,
