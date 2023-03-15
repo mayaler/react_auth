@@ -41,6 +41,7 @@ export default function Books() {
           />
           <div className='card-content'>
             <h2 className='card-title'>{book.title}</h2>
+            <h3 className='card-title'>{book.author}</h3>
             <p className='card-text'>{book.description}</p>
             <a href={book.link} className='card-btn'>
               {book.buttonText}
